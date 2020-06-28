@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+  * {box-sizing: border-box}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("template.jpg");
+}
+p {
+  color:green;
+}
+h2
+{
+  text-align: center;
+}
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.navbar a.active {
+                    background-color: #4CAF50;
+                }
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.responsive {
+            max-width: 100%;
+            height: auto;
+        }
+.container {
+  width: 1000px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;  
+  
+
+}
+
+.container .card {
+  position: relative;
+  
+}
+
+.container .card .face {
+  width: 300px;
+  
+  height: 200px;
+  
+  transition: 0.5s;
+  
+}
+
+.container .card .face.face1 {
+  
+  position: relative;
+  background: #333;
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 1;
+transform: translateY(100px);
+}
+.container .card:hover .face.face1
+{
+  background: #ff0057;
+  transform: translatey(0);
+
+}
+.container .card .face.face1  .content 
+{
+
+  opacity: 0.2;
+  transition: 0.5s;
+}
+
+.container .card:hover .face.face1  .content
+{
+  opacity: 1;
+}
+.container .card .face.face1  .content img
+{
+  max-width: 100px;
+
+}
+.container .card .face.face1  .content h3
+{
+  magin :10px;
+  padding :0;
+  color :#fff;
+  text-align: center;
+  font-size :1.5em;
+}
+
+.container .card .face.face2 {
+position: relative;
+background: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 20px;
+box-sizing: border-box;
+ box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+ transform: translateY(-100px);
+
+}
+.container .card:hover .face.face2
+{
+  transform: translateY(0);
+
+}
+ 
+ .container .card .face.face2  .content p
+ {
+  margin :0;
+  padding: 0;
+ }
+ .container .card .face.face2  .content a
+ {
+  margin: 15px 0 0;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 900;
+  color: #333;
+  padding: 5px;
+  border :1px solid #333;
+ }
+ .container .card .face.face2  .content a:hover
+ {
+ background: #333;
+ color: #fff; 
+ }
+
+        .mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* RIPPLES */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+.footer-social-icons {
+    width: 350px;
+    display:block;
+    margin: 0 auto;
+}
+.social-icon {
+    color: #fff;
+}
+ul.social-icons {
+    margin-top: 10px;
+}
+.social-icons li {
+    vertical-align: top;
+    display: inline;
+    height: 100px;
+}
+.social-icons a {
+    color: #fff;
+    text-decoration: none;
+}
+.fa-facebook {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-facebook:hover {
+    background-color: #3d5b99;
+}
+.fa-instagram {
+    padding:10px 12px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-instagram:hover {
+    background-color: #00aced;
+}
+.fa-rss {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-rss:hover {
+    background-color: #eb8231;
+}
+.fa-youtube {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-youtube:hover {
+    background-color: #e64a41;
+}
+.fa-linkedin {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-linkedin:hover {
+    background-color: #0073a4;
+}
+.fa-github {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-github:hover {
+    background-color: #5a32a3;
+}
+
+
+</style>
+</head>
+<body>
+<img src="bannertop.png" width="1834" height="365" class="responsive">
+<div class="navbar">
+  <a href="home1.html">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Events 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="waves.html">WAVES</a>
+      <a href="ripples.html" class="active">RIPPLES</a>
+      <a href="freshersday.html">FRESHERS DAY</a>
+      <a href="teachersday.html">TEACHERS DAY</a>
+      <a href="inauguration.html">INAUGURATION</a>
+    </div>
+  </div> 
+  <a href="Hobbeeeclub.html">HOBBEEE CLUB</a>
+  <div class="dropdown">
+    <button class="dropbtn">ALUMNI 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="alumni1.html">NOTABLE</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdfneIG2RCvnbjmvfqzYeDUp7i4MGcVMTYhopWmur92fcQBaQ/viewform">REGISTRATION</a>
+       </div>
+  </div>
+   <div class="dropdown">
+    <button class="dropbtn">ACADEMICS 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="study.html">STUDY MATERIALS</a>
+      <a href="placement.html">PLACEMENT GUIDE</a>
+       </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">IMPULSE 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="magazine.html">MAGAZINE</a>
+      <a href="article.html">ARTICLES</a>
+      <a href="facts.html">ELECTRICAL FACTS</a>
+       </div>
+  </div>
+  <a href="Contactus.html">Contact Us</a>
+  <a href="developer.html">DEVELOPER</a>
+</div>
+
+</div><div class="aca"style="font-size: 19px;color:green;">
+<p style="background: black;">Ripples is an intra college symposium conducted exclusively for the students of the College of Engineering Guindy where students from almost every department gather to play a part. The symposium encompasses technical as well as non-technical events, workshops and online events. Guest lectures are also delivered by eminent speakers on contemporary technologies. Ripples brings about the learning of students into a pragmatic experience and thereby promising all the participants with a fun-filled gratifying experience. They are exposed to various interdisciplinary technical and non-technical confronts which help them to enrich their calibre. Triumphant students are incentivized with certificates and cash wallets. Ripples also assists the students in attaining a cutting edge in technological advancements and guarantees to invoke the scientific temper in the students and provides a holistic experience on electrical and electronic technology.
+
+</p>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 13</div>
+  <img src="ripple1.jpg" style="width:100%">
+  <div class="text">RIPPLES</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 13</div>
+  <img src="ripple2.jpg" style="width:100%">
+  <div class="text">RIPPLES</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 13</div>
+  <img src="riplle3.jpg" style="width:100%">
+  <div class="text">RIPPLES</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">4 / 13</div>
+  <img src="ripple4.jpg" style="width:100%">
+  <div class="text">RIPPLES</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">5 / 13</div>
+  <img src="ripples 5.jpg" style="width:100%">
+  <div class="text">RIPPLES</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">6 / 13</div>
+  <img src="ripples6.jpg" style="width:100%">
+  <div class="text">RIPPLES</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">7 / 13</div>
+  <img src="ripples7.jpg" style="width:100%">
+  <div class="text">RIPPLES</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">8 / 13</div>
+  <img src="ripples8.jpg" style="width:100%">
+  <div class="text">RIPPLES</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">9 / 13</div>
+  <img src="ripples9.jpg" style="width:100%">
+  <div class="text">RIPPLES</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">10 / 13</div>
+  <img src="ripples10.jpg" style="width:100%">
+  <div class="text">RIPPLES</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">11 / 13</div>
+  <img src="ripples11.jpg" style="width:100%">
+  <div class="text">RIPPLES</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">12 / 13</div>
+  <img src="ripples12.jpg" style="width:100%">
+  <div class="text">RIPPLES</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">13 / 13</div>
+  <img src="ripples13.jpg" style="width:100%">
+  <div class="text">RIPPLES</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span> 
+  <span class="dot" onclick="currentSlide(7)"></span> 
+  <span class="dot" onclick="currentSlide(8)"></span> 
+  <span class="dot" onclick="currentSlide(9)"></span> 
+  <span class="dot" onclick="currentSlide(10)"></span> 
+  <span class="dot" onclick="currentSlide(11)"></span> 
+  <span class="dot" onclick="currentSlide(12)"></span> 
+  <span class="dot" onclick="currentSlide(13)"></span> 
+</div>
+
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+<div class="footer-social-icons">
+    <h4 class="_14"></h4>
+    <ul class="social-icons">
+        <li><a href="https://www.facebook.com/wavesceg/" class="social-icon" target="blank"> <i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://www.instagram.com/waves_ceg/" class="social-icon" target="blank"> <i class="fa fa-instagram"></i></a></li>
+        <li><a href="https://www.linkedin.com/company/society-of-electrical-and-electronics-engineers" class="social-icon" target="blank"> <i class="fa fa-linkedin"></i></a></li>
+        
+    </ul>
+</div>
+
+</body>
+</html>
