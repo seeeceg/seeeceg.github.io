@@ -1,6 +1,3 @@
 user-agent: *
 
 Allow: /
-Disallow: /academic/
-Disallow: /study/
-Disallow: /placement/
