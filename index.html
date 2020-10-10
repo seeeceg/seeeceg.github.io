@@ -1,42 +1,102 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <script src="jquery-2.1.4.js"></script>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-  </head>
-  <style type="text/css">
-    body{
-  background-color: #ff3300;
-  text-align: center;
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Loading animation</title>
+    <style type="text/css">
+    	body {
+  margin: 0;
+  padding: 0;
+  background-image: url('dept.jpg');
+  background-repeat: no-repeat;
 }
-div{
-  margin: auto;
-  margin-top: 240px;
-  width: 60px;
-  height: 60px;
+
+@keyframes pulse {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: .25;
+    transform: scale(.75);
+  }
+}
+
+#loading {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  z-index: 10;
+  background: #000;
+  transition: opacity .5s linear;
+}
+
+#content {
+  position: fixed;
+  z-index: 1;
+}
+
+.spinner-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  margin: 0;
+}
+
+.pulse-container {
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pulse-bubble {
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  border: 12px solid white;
-  border-top: 12px solid #0066ff;
-  animation: rotation 1s ease-in-out infinite;
-}
-@keyframes rotation {
-  from{
-    transform: rotate(0deg);
-  }
-  to{
-    transform: rotate(360deg);
-  }
+  background: #932e3e;
 }
 
-  </style>
-  <body>
-    <div class="content">
-      
+.pulse-bubble-1 {
+  animation: pulse .4s ease 0s infinite alternate;
+}
+
+.pulse-bubble-2 {
+  animation: pulse .4s ease .2s infinite alternate;
+}
+
+.pulse-bubble-3 {
+  animation: pulse .4s ease .4s infinite alternate;
+}
+
+    </style>
+		<script>
+			function hideLoading() {
+				document.getElementById('loading').style.opacity = '0';
+				document.getElementById('loading').style.zIndex = '-1';
+			}
+		</script>
+	</head>
+	<body onload="hideLoading();">
+    <div id="loading">
+      <div class="spinner-box">
+        <div class="pulse-container">
+          <div class="pulse-bubble pulse-bubble-1"></div>
+          <div class="pulse-bubble pulse-bubble-2"></div>
+          <div class="pulse-bubble pulse-bubble-3"></div>
+        </div>
+      </div>
     </div>
-
-    
-
     <script>
         window.onload=function() {
   function foo()
@@ -46,5 +106,12 @@ div{
   setInterval(foo,2500);
   }
     </script>
-  </body>
+
+    <div id="content">
+      <h3 style="padding: 20px; color: #fff">I am loaded!</h3>
+			<img style="display:none" src="https://i.pinimg.com/originals/3b/8a/d2/3b8ad2c7b1be2caf24321c852103598a.jpg" />
+			<img style="display:none" src="https://resi.ze-robot.com/dl/ul/ultraviolet-4k-wallpaper-3440%C3%971440.jpg" />
+			<img style="display:none" src="https://www.pxwall.com/wp-content/uploads/2018/08/highway-animated-wallpaper-4k-3840x2160.jpg" />
+    </div>
+	</body>
 </html>
