@@ -4,38 +4,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="icon" type="image/png" href="seee.png">
+<title>STAFF COORDINATORS</title>
 
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-<link rel="stylesheet" href= 
-"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity= 
-"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
-    <link rel = "icon" href ="seee.png" 
-        type = "image/png"> 
-      <title>Office Bearers</title>
 <style>
-
-  body{
-font-family: Arial, Helvetica, sans-serif;
-  background-image: url("template2.jpg");
-  }
-
-.bg {
-  /* The image used */
-  background-image: url("bannertop.png");
-
-  /* Full height */
-  height: 100%; 
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: url("template2.jpg");
+}
+p {
+  font-size: 16px;
 }
 .navbar {
   overflow: hidden;
@@ -99,145 +80,118 @@ font-family: Arial, Helvetica, sans-serif;
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
 .responsive {
             max-width: 100%;
             height: auto;
         }
-.container .card {
+
+/* Our Team
+-------------------------------------------------------*/
+
+.our-team .team-row {
+  margin-left: -40px;
+  margin-right: -40px;
+}
+
+.our-team .team-wrap {
+  padding: 0 40px;
+}
+
+.our-team .container-fluid {
+  padding: 0 50px;
+}
+
+.team-img img {
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  overflow: hidden;
+  width: 100%;
+}
+
+.team-member,
+.team-img {
   position: relative;
-  
+  overflow: hidden;
 }
 
-.container .card .face {
-  width: 300px;
-  
-  height: 200px;
-  
-  transition: 0.5s;
-  
+.team-title {
+  margin: 30px 0 7px;
 }
 
-.container .card .face.face1 {
-  
-  position: relative;
-  background: #333;
-display: flex;
-justify-content: center;
-align-items: center;
-z-index: 1;
-transform: translateY(100px);
-}
-.container .card:hover .face.face1
-{
-  background: #ff0057;
-  transform: translatey(0);
-
-}
-.container .card .face.face1  .content 
-{
-
-  opacity: 0.2;
-  transition: 0.5s;
+.overlay {
+  background-color: rgba(20,20,20,.7);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
-.container .card:hover .face.face1  .content
-{
+.team-details {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  padding: 5%;
+  overflow: hidden;
+  width: 100%;
+  z-index: 2;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.team-details p {
+  color: #fff;
+}
+
+.team-img:hover .team-details {
+  opacity: 1;
+  margin-top: -80px;
+}
+
+.team-img:hover .overlay {
   opacity: 1;
 }
-.container .card .face.face1  .content img
-{
-  max-width: 100px;
 
-}
-.container .card .face.face1  .content h3
-{
-  magin :10px;
-  padding :0;
-  color :#fff;
-  text-align: center;
-  font-size :1.5em;
-}
-
-.container .card .face.face2 {
-position: relative;
-background: #fff;
-display: flex;
-justify-content: center;
-align-items: center;
-padding: 20px;
-box-sizing: border-box;
- box-shadow: 0 20px 50px rgba(0,0,0,0.8);
- transform: translateY(-100px);
-
-}
-.container .card:hover .face.face2
-{
-  transform: translateY(0);
-
-}
- 
- .container .card .face.face2  .content p
- {
-  margin :0;
-  padding: 0;
- }
- .container .card .face.face2  .content a
- {
-  margin: 15px 0 0;
+.socials a {
   display: inline-block;
-  text-decoration: none;
-  font-weight: 900;
-  color: #333;
-  padding: 5px;
-  border :1px solid #333;
- }
- .container .card .face.face2  .content a:hover
- {
- background: #333;
- color: #fff; 
- }
- .btn-group button {
-  background-color: #4CAF50; /* Green background */
-  border: 1px solid green; /* Green border */
-  color: white; /* White text */
-  padding: 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  float: left; /* Float the buttons side by side */
+  width: 37px;
+  height: 37px;
+  background-color: transparent;
 }
 
-/* Clear floats (clearfix hack) */
-.btn-group:after {
-  content: "";
-  clear: both;
-  display: table;
+.socials i {
+  line-height: 37px;
+  color: #616161;
+  font-size: 14px;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  text-align: center;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
-.btn-group button:not(:last-child) {
-  border-right: none; /* Prevent double borders */
+.team-details .socials i {
+  color: #fff;
 }
 
-/* Add a background color on hover */
-.btn-group button:hover {
-  background-color: #3e8e41;
-}
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-
-  
+.socials a:hover i {
+  color: #fff;
+  background-color: #355c7d;
 }
 
-button:hover
-{
-  background: blue;
-}
-.aca
-{
-
-}
 .footer-social-icons {
     width: 350px;
     display:block;
@@ -330,6 +284,16 @@ ul.social-icons {
 .fa-github:hover {
     background-color: #5a32a3;
 }
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+
+  
+}
+
+
 .fa-map-marker {
     padding:10px 14px;
     -o-transition:.5s;
@@ -355,18 +319,7 @@ ul.social-icons {
 .fa-whatsapp:hover {
     background-color: #5a32a3;
 }
-
 </style>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173404489-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-173404489-1');
-</script>
-
 </head>
 <body>
 <img src="bannertop.png" width="1834" height="365" class="responsive">
@@ -379,199 +332,324 @@ ul.social-icons {
   <a href="magazine.html">Magazines</a>
   <a href="article.html">Articles</a>
   <a href="facts.html">Facts</a>
-  <a href="Contactus.html" class="active">Office Bearers</a>
+  <a href="Contactus.html">Office Bearers</a>
   <a href="developer.html">Developer</a>
 </div>
 
+<div class="container">
+
+  <div class="row heading">
+    <div class="col-md-6 col-md-offset-3">
+      <h2 class="text-center bottom-line" style="color: red;"></h2>
+      <p class="subheading text-center"></p>
+    </div>
+  </div>
+
+  <div class="row team-row">
+
+    <div class="col-md-4 col-sm-6 team-wrap">
+      <div class="team-member text-center">
+        <div class="team-img">
+          
+            </div>
+        <h3 class="team-title" style="color:white;text-align: justify;align-items: center;background: black;"></h3>
+        <p style="color:white;text-align: justify;align-items: center;background: black;">
+          
 
 
-
-
-<div class="container-fluid p-0 m-0 
-        align-items-center 
-        justify-content-center d-flex" 
-      style="min-height: 100vh; "> 
-
-    <!-- Row for the card-->
-    <div class="row w-100 p-0 w-0"> 
-
-      <!-- Column for card-->
-      <div class="col-lg-4 mb-2"> 
-        <div class="card mx-auto" style="width:18rem;"> 
-          <img class="card-img-top" src="pres.jpg"
-                alt="Card image cap"> 
-
+</p>
+      </div>
+    </div>
+    <!-- end team member -->
+        <div class="col-md-4 col-sm-6 team-wrap">
+      <div class="team-member text-center">
+        <div class="team-img">
+          <img src="pres.jpg" alt="">
+            </div>
+        <h3 class="team-title" style="color:white;text-align: justify;align-items: center;background: black;"></h3>
+        <p style="color:white;text-align: justify;align-items: center;background: black;">
            
-        </div> 
-      </div> 
 
-      <!-- Another column for card -->
-      <div class="col-lg-4 mb-2"> 
-        <div class="card mx-auto" style="width:18rem;"> 
-          <img class="card-img-top" src= 
-"vp.jpg"
-                alt="Card image cap"> 
 
+</p>
+      </div>
+    </div>
+
+
+      <!-- end team member -->
+    <div class="col-md-4 col-sm-6 team-wrap">
+      <div class="team-member text-center">
+        <div class="team-img">
+          
+            </div>
+        <h3 class="team-title" style="color:white;text-align: justify;align-items: center;background: black;"> 
+</h3>
+        <p style="color:white;text-align: justify;align-items: center;background: black;">
            
-        </div> 
-      </div> 
 
-      <!-- Another column for card -->
-      <div class="col-lg-4 mb-2"> 
-        <div class="card mx-auto" style="width:18rem;"> 
-          <img class="card-img-top" src= 
-"lvp.jpg"> 
 
-           
-        </div> 
-      </div> 
-    </div> 
-  </div> 
+</p>
+      </div>
+    </div>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity= 
-"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"> 
-  </script> 
-  
-  <script src= 
-"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity= 
-"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"> 
-  </script> 
-  
-  <script src= 
-"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity= 
-"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"> 
-  </script>
+    <!-- end team member -->
 
-<div class="container-fluid p-0 m-0 
-        align-items-center 
-        justify-content-center d-flex" 
-      style="min-height: 100vh; "> 
-
-    <!-- Row for the card-->
-    <div class="row w-100 p-0 w-0"> 
-
-      <!-- Column for card-->
-      <div class="col-lg-4 mb-2"> 
-        <div class="card mx-auto" style="width:18rem;"> 
-          <img class="card-img-top" src="tre1.jpg"
-                alt="Card image cap"> 
-
-           
-        </div> 
-      </div> 
-
-      <!-- Another column for card -->
-      <div class="col-lg-4 mb-2"> 
-        <div class="card mx-auto" style="width:18rem;"> 
-          <img class="card-img-top" src= 
-"tre2.jpg"
-                alt="Card image cap"> 
-
-           
-        </div> 
-      </div> 
-
-      <!-- Another column for card -->
-     
-    </div> 
-  </div> 
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity= 
-"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"> 
-  </script> 
-  
-  <script src= 
-"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity= 
-"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"> 
-  </script> 
-  
-  <script src= 
-"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity= 
-"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"> 
-  </script>
-  <div class="container-fluid p-0 m-0 
-        align-items-center 
-        justify-content-center d-flex" 
-      style="min-height: 100vh; "> 
-
-    <!-- Row for the card-->
-    <div class="row w-100 p-0 w-0"> 
-
-      <!-- Column for card-->
-      <div class="col-lg-4 mb-2"> 
-        <div class="card mx-auto" style="width:18rem;"> 
-          <img class="card-img-top" src="gs.jpg"
-                alt="Card image cap"> 
-
-           
-        </div> 
-      </div> 
-
-      <!-- Another column for card -->
-      <div class="col-lg-4 mb-2"> 
-        <div class="card mx-auto" style="width:18rem;"> 
-          <img class="card-img-top" src= 
-"js.jpg"
-                alt="Card image cap"> 
-
-           
-        </div> 
-      </div> 
-
-      <!-- Another column for card -->
-       
-    </div> 
-  </div> 
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity= 
-"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"> 
-  </script> 
-  
-  <script src= 
-"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity= 
-"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"> 
-  </script> 
-  
-  <script src= 
-"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity= 
-"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"> 
-  </script>
-
-  <p></p>
-<div class="center">
-
-  <div class="row w-100 p-0 w-0"> 
-
-      <!-- Column for card-->
-      <div class="col-lg-4 mb-2"> 
-        <div class="card mx-auto" style="width:18rem;"> 
-          <img class="card-img-top" src="mail.jpg"
-                alt="Card image cap"> 
-
-           
-        </div> 
-      </div> 
+  </div>
 </div>
+
+<div class="container">
+
+  <div class="row heading">
+    <div class="col-md-6 col-md-offset-3">
+      <h2 class="text-center bottom-line" style="color: red;"></h2>
+      <p class="subheading text-center"></p>
+    </div>
+  </div>
+
+  <div class="row team-row">
+
+    <div class="col-md-4 col-sm-6 team-wrap">
+      <div class="team-member text-center">
+        <div class="team-img">
+          <img src="vp.jpg" alt="">
+            </div>
+        <h3 class="team-title" style="color:white;text-align: justify;align-items: center;background: black;">
+</h3>
+        <p style="color:white;text-align: justify;align-items: center;background: black;">
+           
+
+
+</p>
+      </div>
+    </div>
+    <!-- end team member -->
+        <div class="col-md-4 col-sm-6 team-wrap">
+      <div class="team-member text-center">
+        <div class="team-img">
+          
+            </div>
+        <h3 class="team-title" style="color:white;text-align: justify;align-items:"></h3>
+        <p style="color:white;text-align: justify;align-items: center;background: black;">
+          
+
+
+</p>
+      </div>
+    </div>
+
+
+      <!-- end team member -->
+    <div class="col-md-4 col-sm-6 team-wrap">
+      <div class="team-member text-center">
+        <div class="team-img">
+          <img src="lvp.jpg" alt="">
+            </div>
+        <h3 class="team-title" style="color:white;text-align: justify;align-items: center;">
+</h3>
+        <p style="color:white;text-align: justify;align-items: center;background: black;">
+          
+
+
+
+
+</p>
+      </div>
+    </div>
+
+    <!-- end team member -->
+
+  </div>
 </div>
-<p></p>
+<div class="container">
+
+  <div class="row heading">
+    <div class="col-md-6 col-md-offset-3">
+      <h2 class="text-center bottom-line" style="color: red;"></h2>
+      <p class="subheading text-center"></p>
+    </div>
+  </div>
+
+  <div class="row team-row">
+
+    <div class="col-md-4 col-sm-6 team-wrap">
+      <div class="team-member text-center">
+        <div class="team-img">
+          <img src="tres1.jpg" alt="">
+            </div>
+        <h3 class="team-title" style="color:white;text-align: justify;align-items: center;background: black;">
+</h3>
+        <p style="color:white;text-align: justify;align-items: center;background: black;">
+           
+
+
+</p>
+      </div>
+    </div>
+    <!-- end team member -->
+        <div class="col-md-4 col-sm-6 team-wrap">
+      <div class="team-member text-center">
+        <div class="team-img">
+          
+            </div>
+        <h3 class="team-title" style="color:white;text-align: justify;align-items:"></h3>
+        <p style="color:white;text-align: justify;align-items: center;background: black;">
+          
+
+
+</p>
+      </div>
+    </div>
+
+
+      <!-- end team member -->
+    <div class="col-md-4 col-sm-6 team-wrap">
+      <div class="team-member text-center">
+        <div class="team-img">
+          <img src="tres2.jpg" alt="">
+            </div>
+        <h3 class="team-title" style="color:white;text-align: justify;align-items: center;">
+</h3>
+        <p style="color:white;text-align: justify;align-items: center;background: black;">
+          
+
+
+
+
+</p>
+      </div>
+    </div>
+
+    <!-- end team member -->
+
+  </div>
+</div>
+<div class="container">
+
+  <div class="row heading">
+    <div class="col-md-6 col-md-offset-3">
+      <h2 class="text-center bottom-line" style="color: red;"></h2>
+      <p class="subheading text-center"></p>
+    </div>
+  </div>
+
+  <div class="row team-row">
+
+    <div class="col-md-4 col-sm-6 team-wrap">
+      <div class="team-member text-center">
+        <div class="team-img">
+          
+            </div>
+        <h3 class="team-title" style="color:white;text-align: justify;align-items: center;background: black;">
+</h3>
+        <p style="color:white;text-align: justify;align-items: center;background: black;">
+           
+
+
+</p>
+      </div>
+    </div>
+    <!-- end team member -->
+        <div class="col-md-4 col-sm-6 team-wrap">
+      <div class="team-member text-center">
+        <div class="team-img">
+          <img src="gs.jpg" alt="">
+            </div>
+        <h3 class="team-title" style="color:white;text-align: justify;align-items:"></h3>
+        <p style="color:white;text-align: justify;align-items: center;background: black;">
+          
+
+
+</p>
+      </div>
+    </div>
+
+
+      <!-- end team member -->
+    <div class="col-md-4 col-sm-6 team-wrap">
+      <div class="team-member text-center">
+        <div class="team-img">
+          
+            </div>
+        <h3 class="team-title" style="color:white;text-align: justify;align-items: center;">
+</h3>
+        <p style="color:white;text-align: justify;align-items: center;background: black;">
+          
+
+
+
+
+</p>
+      </div>
+    </div>
+
+    <!-- end team member -->
+
+  </div>
+</div>
+ <div class="container">
+
+  <div class="row heading">
+    <div class="col-md-6 col-md-offset-3">
+      <h2 class="text-center bottom-line" style="color: red;"></h2>
+      <p class="subheading text-center"></p>
+    </div>
+  </div>
+
+  <div class="row team-row">
+
+    <div class="col-md-4 col-sm-6 team-wrap">
+      <div class="team-member text-center">
+        <div class="team-img">
+          
+            </div>
+        <h3 class="team-title" style="color:white;text-align: justify;align-items: center;background: black;">
+</h3>
+        <p style="color:white;text-align: justify;align-items: center;background: black;">
+           
+
+
+</p>
+      </div>
+    </div>
+    <!-- end team member -->
+        <div class="col-md-4 col-sm-6 team-wrap">
+      <div class="team-member text-center">
+        <div class="team-img">
+          <img src="js.jpg" alt="">
+            </div>
+        <h3 class="team-title" style="color:white;text-align: justify;align-items:"></h3>
+        <p style="color:white;text-align: justify;align-items: center;background: black;">
+          
+
+
+</p>
+      </div>
+    </div>
+
+
+      <!-- end team member -->
+    <div class="col-md-4 col-sm-6 team-wrap">
+      <div class="team-member text-center">
+        <div class="team-img">
+          
+            </div>
+        <h3 class="team-title" style="color:white;text-align: justify;align-items: center;">
+</h3>
+        <p style="color:white;text-align: justify;align-items: center;background: black;">
+          
+
+
+
+
+</p>
+      </div>
+    </div>
+
+    <!-- end team member -->
+
+  </div>
+</div>
+
 
 <div class="footer-social-icons">
     <h4 class="_14"></h4>
@@ -581,11 +659,13 @@ ul.social-icons {
         <li><a href="https://www.linkedin.com/company/society-of-electrical-and-electronics-engineers" class="social-icon" target="_blank"> <i class="fa fa-linkedin"></i></a></li>
         <li><a href="https://www.google.co.in/maps/place/EEE+Department/@13.0114738,80.2321428,17z/data=!3m1!4b1!4m5!3m4!1s0x3a52679f9a51089f:0x2fee8610ffae7694!8m2!3d13.0114738!4d80.2343315" class="social-icon" target="_blank"> <i class="fa fa-map-marker"></i></a></li>
       
-        <li><a href="https://api.whatsapp.com/send?phone=+919500268452" target="_blank"><i class="fa fa fa-whatsapp"> 9500268452</i></a><li>
+        <li><a href="https://api.whatsapp.com/send?phone=+919500268452"><i class="fa fa fa-whatsapp" target="_blank"> 9500268452</i></a><li>
+
 
         
     </ul>
 </div>
+
 
 </body>
 </html>
